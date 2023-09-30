@@ -1,0 +1,145 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --index: calc(1vh + 1vw);
+  --header-color: #f4efec;
+  --text-color: #cdc6c3;
+  --gallery-gap: calc((var(--index)) * 10);
+}
+@font-face {
+  font-family: raleway_f;
+  src: url(../fonts/raleway-regular.woff2);
+}
+
+@font-face {
+  font-family: outfit_f;
+  src: url(../fonts/outfit-regular.woff2);
+}
+
+/*will-change*/
+
+.content,
+.hero-section__hero,
+.main-header,
+.gallery__left-side,
+.gallery__right-side {
+  will-change: transform;
+}
+
+body {
+  background-image: url(../images/bg.jpg);
+  background-size: 50px;
+  color: #fafafa;
+  font-family: raleway_f, sans-serif;
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: outfit_f, sans-serif;
+}
+
+.hero-section__hero {
+  width: calc(var(--index) * 36);
+  position: absolute;
+  left: 37vw;
+  top: 8vh;
+  z-index: -1;
+}
+
+.container {
+  padding: 0 7vw;
+}
+
+.main-header {
+  height: 100vh;
+}
+
+.main-title {
+  font-size: calc(var(--index) * 8);
+  position: absolute;
+  width: min-content;
+  bottom: 12vh;
+  line-height: 0.9;
+}
+
+.gallery {
+  display: flex;
+  padding: calc(var(--index) * 8) 0;
+}
+
+.gallery > div {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.gallery__item {
+  max-width: calc(var(--index) * 21);
+  margin-bottom: var(--gallery-gap);
+  max-height: 180vh;
+  border-radius: 8px;
+}
+
+.gallery__left-side {
+  margin-top: calc(var(--gallery-gap) * 1.75);
+}
+
+.gallery__right-side .gallery__item {
+  margin: 0;
+  margin-top: var(--gallery-gap);
+}
+
+.text-block {
+  color: var(--text-color);
+  position: relative;
+}
+
+.text-block__header {
+  font-size: 2rem;
+  line-height: 2.4rem;
+  color: var(--header-color);
+  margin-bottom: 1.5rem;
+}
+
+.text-block__paragraph {
+  line-height: 1.75;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  padding: calc(var(--index) * 3) 0;
+  opacity: 0.3;
+}
+
+@media (max-width: 649px) {
+  .container {
+    padding: 0 2vw;
+  }
+  .gallery {
+    flex-direction: column;
+    padding-top: 0;
+  }
+  .gallery__item {
+    max-width: 100%;
+    margin-bottom: calc(var(--gallery-gap) / 2);
+  }
+
+  .hero-section__hero {
+    width: calc(var(--index) * 36);
+    position: absolute;
+    left: 10vw;
+    top: 8vh;
+    z-index: -1;
+  }
+}
