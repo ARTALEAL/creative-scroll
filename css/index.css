@@ -20,6 +20,16 @@
   src: url(../fonts/outfit-regular.woff2);
 }
 
+/*will-change*/
+
+.content,
+.hero-section__hero,
+.main-header,
+.gallery__left-side,
+.gallery__right-side {
+  will-change: transform;
+}
+
 body {
   background-image: url(../images/bg.jpg);
   background-size: 50px;
